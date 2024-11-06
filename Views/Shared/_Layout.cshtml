@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện thoại Nha Trang giá rẻ</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel=" stylesheet" href="~/Content/Style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @using Ictshop.Models
+
+    <style type="text/css">
+        body {
+            background-color: #d0d4f2;
+        }
+
+        .navbar-inverse {
+            background-color: #2334cf;
+            border-color: #2334cf;
+        }
+
+        .top_header {
+            background-color: #d0d4f2;
+            color: white;
+        }
+
+        .form-inline {
+            float: right;
+            padding-top: 10px;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: x-large;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+
+        .navbar-inverse .navbar-nav > li > a {
+            color: white;
+            font-size: large;
+        }
+
+            .navbar-inverse .navbar-nav > li > a:hover {
+                color: black;
+            }
+
+        .navbar-brand {
+            color: blue;
+        }
+
+        .spnoibat {
+            background-color: white;
+        }
+
+            .spnoibat h3 {
+                padding-left: 30px;
+            }
+
+        .giohang {
+            color: white;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    @{ var u = Session["use"] as Ictshop.Models.Nguoidung; }
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="top_header col-md-12">
+
+            <div class="row">
+                @* <div class="col-sm-2"><img class="navbar-brand" src="~/HinhanhSP/logo1.jpg" width="20" height="20" style="padding:0" /></div>*@
+                <div class="col-sm-4 col-md-0" style="font-size:large">Welcom to shop</div>
+
+                <div class="col-sm-4 col-md-0" style="padding-left:200px;">
+                    <button type="button" class="btn btn-danger"> @Html.Action("GioHangPartial", "GioHang", new { @class = "giohang" }) </button>
+                </div>
+                @*@Html.Action("GioHangPartial", "GioHang",new { @style = "color:while" })*@
+                @{ if (u != null)
+                    {
+                        <div class="col-sm-4 col-md-0">
+                            <a style="color:white" href="@Url.Action("Profile", "User", new { id = u.MaNguoiDung  })"> Xin chào : @u.Email</a>
+                            &nbsp;
+                            @Html.ActionLink("ĐĂNG XUẤT", "DangXuat", "User", new { style = "color:red" })
+                            @*<a style="color:red" href="/User/DangXuat"> ĐĂNG XUẤT</a>*@
+                        </div> }
+                    else
+                    {
+                        <div class="col-sm-4 col-md-0">
+                            <button type="button" class="btn btn-danger">  <a style="color:white" href="/User/Dangky"> Đăng ký</a></button>
+                            &nbsp;
+                            <button type="button" class="btn btn-danger"><a style="color:white" href="/User/Dangnhap"> Đăng nhập</a></button>
+                        </div> } }
+
+
+            </div>
+
+        </div>
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-brand" src="~/HinhanhSP/avt2.jpg" width="50" height="50" style="padding:0" />
+                @Html.ActionLink(" 𝓝𝓱ậ𝓽 𝓛𝓸𝓷𝓰 𝓜𝓸𝓫𝓲𝓵𝓮", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+
+            </div>
+
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" title="dienthoai">
+                            @*<span><i class=" glyphicon-music "></i></span>*@
+                            <span>ĐIỆN THOẠI</span>
+
+                        </a>
+                        @*<span><i class=" glyphicon-music "></i> </span>
+                            <br />
+                            <span>@Html.ActionLink("Trang chủ", "Index", "Home") </span>*@
+                    </li>
+                    <li>
+                        <a href="#" title="LAPTOP">
+                            @*<span><i class="fas fa-tablet"></i></span>*@
+                            <span>LAPTOP</span>
+
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" title="PHUKIEN">
+                            @*<span><i class="fas fa-desktop"></i></span>*@
+                            <span>PHỤ KIỆN</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Home/Contact" title="LIENHE">
+                            @*<span><i class="fas fa-headphones"></i></span>*@
+                            <span>LIÊN HỆ</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a style="color:white"
+                           class="nav-link"
+                           href="@Url.Action("Index", "DonHangs")">ĐƠN HÀNG</a>
+                    </li>
+                </ul>
+                @using (Html.BeginForm())
+                {
+                    <div class="form-group form-inline">
+                        @Html.TextBox("SearchString", "", new { @class = "form-control" })
+                        <input type="submit" class="btn btn-default" value="Search" />
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <br>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <div>
+            <img class="img-responsive" src="~/HinhanhSP/ban2.jpg" />
+        </div>
+        <br />
+    </div>
+    <footer class="bg-info" style="padding-left: 50px; background-color: #2334cf">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <h2>Bảo hành</h2>
+                <span>Chính sách mua hàng</span>
+                <br />
+                <span>Chính sách bảo hành</span>
+                <br />
+                <span>Trung tâm bảo hành</span>
+                <br />
+                <span>Tra cứu bảo hành</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Liên kết</h2>
+                <span>Tin tức Mobile</span>
+                <br />
+                <span>Lập trình Web</span>
+                <br />
+                <span>GenkVN</span>
+                <br />
+                <span>Dân trí</span>
+
+
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Thông tin</h2>
+                <span>Về chúng tôi</span>
+                <br />
+                <span>Liên hệ</span>
+                <br />
+                <span>Góp ý</span>
+                <br />
+                <span>Tra cứu</span>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h2>Theo dõi</h2>
+                <span>Kênh youtube</span>
+                <br />
+                <span>Fanpage</span>
+                <br />
+                <span>Shopee</span>
+                <br />
+                <span>Group</span>
+
+            </div>
+        </div>
+        <hr />
+        <center> <p class="bg-primary">&copy; @DateTime.Now.Year - Nhật Long Mobile</p></center>
+    </footer>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
