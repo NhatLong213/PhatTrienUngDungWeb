@@ -1,0 +1,6 @@
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Project_63134526.csproj.AssemblyReference.cache
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Ictshop.Migrations.AddThanhtien.resources
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Project_63134526.csproj.GenerateResource.cache
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Project_63134526.csproj.CoreCompileInputs.cache
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Ictshop.dll
+D:\zzzzzzzz\Project_63134526\Ictshop\obj\Debug\Ictshop.pdb
